@@ -58,11 +58,12 @@ if ( $http->hasPostVariable( 'RemoveApproveUsers' ) )
 }
 else if ( $http->hasPostVariable( 'AddApproveUsers' ) )
 {
-        include_once( 'kernel/classes/ezcontentbrowse.php' );
-        eZContentBrowse::browse( array( 'action_name' => 'SelectMultipleUsers',
-                                        'class_array' => array ( 'user' ),
-                                        'from_page' => 'ezapprove2/select_approver/' . $approveStatus->attribute( 'id' ) ),
-                                 $Module );
+    $approveINI = eZINI::instance( 'ezapprove2.ini' );
+    include_once( 'kernel/classes/ezcontentbrowse.php' );
+    eZContentBrowse::browse( array( 'action_name' => 'SelectMultipleUsers',
+                                    'class_array' => $approveINI->variable( 'ApproveSettings', 'UserClassIdentifierList' ),
+                                    'from_page' => 'ezapprove2/select_approver/' . $approveStatus->attribute( 'id' ) ),
+                             $Module );
 }
 else if ( $http->hasPostVariable( 'SelectedObjectIDArray' ) )
 {

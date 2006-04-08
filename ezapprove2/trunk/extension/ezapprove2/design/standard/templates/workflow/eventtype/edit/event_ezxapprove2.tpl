@@ -33,7 +33,7 @@
 </div>
 <div class="block">
     <fieldset>
-        <legend>{'Select if all or one is enough to approve content.'|i18n( 'design/admin/workflow/eventtype/edit' )}</legend>
+        <legend>{'Select if one or all is enough to approve content.'|i18n( 'design/admin/workflow/eventtype/edit' )}</legend>
         {foreach $eventData.require_approve_name_map as $value => $text}
             <label><input type="radio" name="ApproveOneAll_{$event.id}" value="{$value}" {cond( $eventData.require_all_approve|eq($value), 'checked="checked"', '' )} />{$text|wash}</label>
         {/foreach}

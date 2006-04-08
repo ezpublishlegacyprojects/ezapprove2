@@ -533,12 +533,13 @@ class eZXApprove2Type extends eZWorkflowEventType
         {
             case "AddApproveUsers" :
             {
+                $approveINI = eZINI::instance( 'ezapprove2.ini' );
                 include_once( 'kernel/classes/ezcontentbrowse.php' );
                 eZContentBrowse::browse( array( 'action_name' => 'SelectMultipleUsers',
                                                 'from_page' => '/workflow/edit/' . $workflowEvent->attribute( 'workflow_id' ),
                                                 'custom_action_data' => array( 'event_id' => $eventID,
                                                                                'browse_action' => $action ),
-                                                'class_array' => array ( 'user' ) ),
+                                                'class_array' => $approveINI->variable( 'ApproveSettings', 'UserClassIdentifierList' ) ),
                                          $module );
             } break;
 
@@ -553,12 +554,13 @@ class eZXApprove2Type extends eZWorkflowEventType
 
             case "AddApproveGroups" :
             {
+                $approveINI = eZINI::instance( 'ezapprove2.ini' );
                 include_once( 'kernel/classes/ezcontentbrowse.php' );
                 eZContentBrowse::browse( array( 'action_name' => 'SelectMultipleUsers',
                                                 'from_page' => '/workflow/edit/' . $workflowEvent->attribute( 'workflow_id' ),
                                                 'custom_action_data' => array( 'event_id' => $eventID,
                                                                                'browse_action' => $action ),
-                                                'class_array' => array ( 'user_group' ) ),
+                                                'class_array' => $approveINI->variable( 'ApproveSettings', 'UserGroupClassIdentifierList' ) ),
                                          $module );
             } break;
 
@@ -573,12 +575,13 @@ class eZXApprove2Type extends eZWorkflowEventType
 
             case "AddExcludeUser" :
             {
+                $approveINI = eZINI::instance( 'ezapprove2.ini' );
                 include_once( 'kernel/classes/ezcontentbrowse.php' );
                 eZContentBrowse::browse( array( 'action_name' => 'SelectMultipleUsers',
                                                 'from_page' => '/workflow/edit/' . $workflowEvent->attribute( 'workflow_id' ),
                                                 'custom_action_data' => array( 'event_id' => $eventID,
                                                                                'browse_action' => $action ),
-                                                'class_array' => array ( 'user_group' ) ),
+                                                'class_array' => $approveINI->variable( 'ApproveSettings', 'UserGroupClassIdentifierList' ) ),
                                          $module );
             } break;
 
