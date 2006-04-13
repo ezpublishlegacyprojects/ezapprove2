@@ -1,0 +1,6 @@
+*Installation:
+
+1. Copy this folder to <ez publish root>/extension/ezapprove2
+2. Apply SQL in sql/<sql server>/schema.sql
+3. Activate the ezapprove2 extension.
+4. Clear ini, ini-override and tpl-override cache.
