@@ -38,7 +38,7 @@
 {case match=0}
 
 {if $collab_item.is_creator}
-    <p>{"The content object %1 awaits approval before it can be published."|i18n('design/admin/collaboration/handler/view/full/ezapprove',,array($contentobject_link))}</p>
+    <p>{"The content object awaits approval before it can be published."|i18n('design/admin/collaboration/handler/view/full/ezapprove',,array($contentobject_link))}</p>
     <p>{"If you wish you may send a message to the person approving it?"|i18n('design/admin/collaboration/handler/view/full/ezapprove')}</p>
 {else}
     {switch match=first_set( $approveStatus.user_approve_status.approve_status, 0 )}
@@ -125,6 +125,35 @@
 </div>
 
 </div>
+{if $message_list}
+
+<div class="context-block">
+
+{* DESIGN: Header START *}<div class="box-header"><div class="box-tc"><div class="box-ml"><div class="box-mr"><div class="box-tl"><div class="box-tr">
+
+<h2 id="messages" class="context-title">{"Messages"|i18n('design/admin/collaboration/handler/view/full/ezapprove')}</h2>
+
+{* DESIGN: Mainline *}<div class="header-subline"></div>
+
+{* DESIGN: Header END *}</div></div></div></div></div></div>
+
+{* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-mr"><div class="box-bl"><div class="box-br"><div class="box-content">
+
+  <table class="special" cellspacing="0">
+  {section name=Message loop=$message_list sequence=array(bglight,bgdark)}
+
+      {collaboration_simple_message_view view=element sequence=$:sequence is_read=$current_participant.last_read|gt($:item.modified) item_link=$:item collaboration_message=$:item.simple_message}
+
+  {/section}
+  </table>
+
+{* DESIGN: Content END *}</div></div></div></div></div></div>
+
+</div>
+
+{/if}
+
+
 
 {if $content_version|null()|not()}
 <div class="context-block">
@@ -164,7 +193,6 @@
 {* DESIGN: Header START *}<div class="box-header"><div class="box-tc"><div class="box-ml"><div class="box-mr"><div class="box-tl"><div class="box-tr">
 
 <h2 class="context-title">{"Participants"|i18n('design/admin/collaboration/handler/view/full/ezapprove')}</h2>
-
 {* DESIGN: Mainline *}<div class="header-subline"></div>
 
 {* DESIGN: Header END *}</div></div></div></div></div></div>
@@ -184,34 +212,7 @@
 {* DESIGN: Content END *}</div></div></div>
 
 </div>
-{if $message_list}
 
-<div class="context-block">
-
-{* DESIGN: Header START *}<div class="box-header"><div class="box-tc"><div class="box-ml"><div class="box-mr"><div class="box-tl"><div class="box-tr">
-
-<h2 id="messages" class="context-title">{"Messages"|i18n('design/admin/collaboration/handler/view/full/ezapprove')}</h2>
-
-{* DESIGN: Mainline *}<div class="header-subline"></div>
-
-{* DESIGN: Header END *}</div></div></div></div></div></div>
-
-{* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-mr"><div class="box-bl"><div class="box-br"><div class="box-content">
-
-  <table class="special" cellspacing="0">
-  {section name=Message loop=$message_list sequence=array(bglight,bgdark)}
-
-      {collaboration_simple_message_view view=element sequence=$:sequence is_read=$current_participant.last_read|gt($:item.modified) item_link=$:item collaboration_message=$:item.simple_message}
-
-  {/section}
-  </table>
-
-{* DESIGN: Content END *}</div></div></div></div></div></div>
-
-</div>
-
-{/if}
 
 {/let}
-
 </form>

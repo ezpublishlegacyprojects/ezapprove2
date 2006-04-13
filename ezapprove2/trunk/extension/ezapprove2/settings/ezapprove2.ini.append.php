@@ -9,4 +9,9 @@ UserClassIdentifierList[]=user
 UserGroupClassIdentifierList[]
 UserGroupClassIdentifierList[]=user_group
 
+# Set if object locking, and node creation should on draft creation
+# should be enabled. ( It's recommended not to touch this setting )
+ObjectLockOnEdit=false
+NodeCreationOnDraft=false
+
 */ ?>

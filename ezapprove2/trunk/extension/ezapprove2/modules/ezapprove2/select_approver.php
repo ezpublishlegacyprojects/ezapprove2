@@ -96,7 +96,50 @@ else if ( $http->hasPostVariable( 'SubmitButton' ) )
         $workflowProcess->setAttribute( 'modified', mktime() );
         $workflowProcess->store();
 
+	$approveINI = eZINI::instance( 'ezapprove2.ini' );
+	if ( $approveINI->variable( 'ApproveSettings', 'ObjectLockOnEdit' ) == 'true' )
+	{
+        // Lock all related objects for editing and removal
+        $object = $approveStatus->attribute( 'contentobject' );
+        if ( $object->attribute( 'contentclass_id' ) == 17 ) // 17 == newsletter_issue
+        {
+            foreach( $object->relatedContentObjectList( $approveStatus->attribute( 'active_version' ), false, false ) as $relatedObject )
+            {
+                $relatedObject->setAttribute( 'flags', $relatedObject->attribute( 'flags' ) | EZ_CONTENT_OBJECT_FLAG_LOCK_EDIT | EZ_CONTENT_OBJECT_FLAG_LOCK_REMOVE );
+                $relatedObject->sync();
+            }
+        }
+        }
+
         $collaborationItemID = $approveStatus->createCollaboration();
+
+	$approveINI = eZINI::instance( 'ezapprove2.ini' );
+	if ( $approveINI->variable( 'ApproveSettings', 'NodeCreationOnDraft' ) == 'true' )
+	{
+        // Create temporary contentobject tree node entry
+        $db =& eZDB::instance();
+        include_once( 'kernel/classes/ezcontentobjecttreenode.php' );
+        $parentNodeIDArray = $object->attribute( 'parent_nodes' );
+        $tmpNode = eZContentObjectTreeNode::create( $parentNodeIDArray[0],
+                                                    $object->attribute( 'id' ),
+                                                    $approveStatus->attribute( 'active_version' ) );
+        $tmpNode->store();
+        $parentNode = $tmpNode->attribute( 'parent' );
+        $tmpNode->setAttribute( 'main_node_id', $tmpNode->attribute( 'node_id' ) );
+        $tmpNode->setAttribute( 'path_string', $parentNode->attribute( 'path_string' ) . $tmpNode->attribute( 'node_id' ) . '/' );
+        $tmpNode->setAttribute( 'depth', ( $parentNode->attribute( 'depth' ) + 1 ) );
+//        $tmpNode->setAttribute( 'published', mktime() );
+        $tmpNode->setAttribute( 'path_identification_string', $tmpNode->pathWithNames() );
+        $tmpNode->sync();
+
+        include_once( 'kernel/classes/ezurlalias.php' );
+        $alias = eZURLAlias::create( $tmpNode->attribute( 'path_identification_string' ),
+                                     'content/versionview/' . $object->attribute( 'id' ) . '/' . $approveStatus->attribute( 'active_version' ) );
+        $alias->store();
+
+        include_once( "kernel/classes/ezcontentcachemanager.php" );
+        eZContentCacheManager::clearObjectViewCache( $parentNode->attribute( 'contentobject_id' ) );
+        }
 
         return $Module->redirect( 'collaboration', 'item', array( 'full',
                                                                   $collaborationItemID ) );
