@@ -130,7 +130,7 @@ class eZXApprove2Type extends eZWorkflowEventType
           If we run event first time ( when we click publish in admin ) we do not have user_id set in workflow process,
           so we take current user and store it in workflow process, so next time when we run event from cronjob we fetch
           user_id from there.
-         */
+        */
         if ( $process->attribute( 'user_id' ) == 0 )
         {
             $user =& eZUser::currentUser();
@@ -246,12 +246,15 @@ class eZXApprove2Type extends eZWorkflowEventType
                                     $approveINI = eZINI::instance( 'ezapprove2.ini' );
                                     if ( $approveINI->variable( 'ApproveSettings', 'NodeCreationOnDraft' ) == 'true' )
                                     {
-					$db = eZDB::instance();
-					$db->query( 'UPDATE ezcontentobject_version SET status = 4 WHERE contentobject_id = ' . $approveStatus->attribute( 'contentobject_id' ) .
-							' AND version = ' . $approveStatus->attribute( 'active_version' ) );
-					$db->query( 'DELETE FROM ezcontentobject_tree where contentobject_id = ' . $approveStatus->attribute( 'contentobject_id' ) .
-							' AND contentobject_version = ' . $approveStatus->attribute( 'active_version' ) );
-					$db->query( 'DELETE FROM ezurlalias WHERE destination_url=\'content/versionview/' . $approveStatus->attribute( 'contentobject_id' ) . '/' . $approveStatus->attribute( 'active_version' ) . '\'' );
+                                        $db = eZDB::instance();
+                                        $db->query( 'UPDATE ezcontentobject_version
+                                                     SET status = ' . EZ_VERSION_STATUS_REJECTED . '
+                                                     WHERE contentobject_id = ' . $approveStatus->attribute( 'contentobject_id' ) . '
+                                                     AND version = ' . $approveStatus->attribute( 'active_version' ) );
+                                        $db->query( 'DELETE FROM ezcontentobject_tree where contentobject_id = ' . $approveStatus->attribute( 'contentobject_id' ) .
+                                                    ' AND contentobject_version = ' . $approveStatus->attribute( 'active_version' ) );
+                                        $db->query( 'DELETE FROM ezurlalias
+                                                     WHERE destination_url=\'content/versionview/' . $approveStatus->attribute( 'contentobject_id' ) . '/' . $approveStatus->attribute( 'active_version' ) . '\'' );
                                     }
                                     return EZ_WORKFLOW_TYPE_STATUS_WORKFLOW_CANCELLED;
                                 }
@@ -270,19 +273,19 @@ class eZXApprove2Type extends eZWorkflowEventType
                                     $approveStatus->setAttribute( 'approve_status', eZXApproveStatus_StatusApproved );
                                     $approveStatus->store();
 
-	                            $approveINI = eZINI::instance( 'ezapprove2.ini' );
+                                    $approveINI = eZINI::instance( 'ezapprove2.ini' );
                                     if ( $approveINI->variable( 'ApproveSettings', 'ObjectLockOnEdit' ) == 'true' )
                                     {
-				    // Unlock related objects
-                                    $object = $approveStatus->attribute( 'contentobject' );
-                                    if ( $object->attribute( 'contentclass_id' ) == 17 ) // 17 == newsletter_issue
-                                    {
-                                        foreach( $object->relatedContentObjectList( $approveStatus->attribute( 'active_version' ), false, false ) as $relatedObject )
+                                        // Unlock related objects
+                                        $object = $approveStatus->attribute( 'contentobject' );
+                                        if ( $object->attribute( 'contentclass_id' ) == 17 ) // 17 == newsletter_issue
                                         {
-                                            $relatedObject->setAttribute( 'flags', $relatedObject->attribute( 'flags' ) ^ EZ_CONTENT_OBJECT_FLAG_LOCK_EDIT ^ EZ_CONTENT_OBJECT_FLAG_LOCK_REMOVE );
-                                            $relatedObject->sync();
+                                            foreach( $object->relatedContentObjectList( $approveStatus->attribute( 'active_version' ), false, false ) as $relatedObject )
+                                            {
+                                                $relatedObject->setAttribute( 'flags', $relatedObject->attribute( 'flags' ) ^ EZ_CONTENT_OBJECT_FLAG_LOCK_EDIT ^ EZ_CONTENT_OBJECT_FLAG_LOCK_REMOVE );
+                                                $relatedObject->sync();
+                                            }
                                         }
-                                    }
                                     }
 
                                     return EZ_WORKFLOW_TYPE_STATUS_ACCEPTED;
@@ -299,9 +302,9 @@ class eZXApprove2Type extends eZWorkflowEventType
                                 $approveINI = eZINI::instance( 'ezapprove2.ini' );
                                 if ( $approveINI->variable( 'ApproveSettings', 'NodeCreationOnDraft' ) == 'true' )
                                 {
-                                $db = eZDB::instance();
-                                $db->arrayQuery( 'DELETE FROM ezcontentobject_tree where contentobject_id = ' . $approveStatus->attribute( 'contentobject_id' ) .
-                                                 ' AND contentobject_version = ' . $approveStatus->attribute( 'active_version' ) );
+                                    $db = eZDB::instance();
+                                    $db->arrayQuery( 'DELETE FROM ezcontentobject_tree where contentobject_id = ' . $approveStatus->attribute( 'contentobject_id' ) .
+                                                     ' AND contentobject_version = ' . $approveStatus->attribute( 'active_version' ) );
                                 }
 
                                 return EZ_WORKFLOW_TYPE_STATUS_WORKFLOW_CANCELLED;
@@ -638,36 +641,36 @@ class eZXApprove2Type extends eZWorkflowEventType
     {
         foreach ( array_keys( $attr ) as $attrKey )
         {
-          switch ( $attrKey )
-          {
-              case 'DeleteContentObject':
-              {
-                     $contentObjectID = $attr[ $attrKey ];
-                     $db = & eZDb::instance();
-                     // Cleanup "User who approves content"
-                     $db->query( 'UPDATE ezworkflow_event
+            switch ( $attrKey )
+            {
+                case 'DeleteContentObject':
+                {
+                    $contentObjectID = $attr[ $attrKey ];
+                    $db = & eZDb::instance();
+                    // Cleanup "User who approves content"
+                    $db->query( 'UPDATE ezworkflow_event
                                   SET    data_int1 = \'0\'
                                   WHERE  data_int1 = \'' . $contentObjectID . '\''  );
-                     // Cleanup "Excluded user groups"
-                     $excludedGroupsID = $db->arrayQuery( 'SELECT data_text2, id
+                    // Cleanup "Excluded user groups"
+                    $excludedGroupsID = $db->arrayQuery( 'SELECT data_text2, id
                                                            FROM   ezworkflow_event
                                                            WHERE  data_text2 like \'%' . $contentObjectID . '%\'' );
-                     if ( count( $excludedGroupsID ) > 0 )
-                     {
-                         foreach ( $excludedGroupsID as $groupID )
-                         {
-                             // $IDArray will contain IDs of "Excluded user groups"
-                             $IDArray = split( ',', $groupID[ 'data_text2' ] );
-                             // $newIDArray will contain  array without $contentObjectID
-                             $newIDArray = array_filter( $IDArray, create_function( '$v', 'return ( $v != ' . $contentObjectID .' );' ) );
-                             $newValues = implode( ',', $newIDArray );
-                             $db->query( 'UPDATE ezworkflow_event
+                    if ( count( $excludedGroupsID ) > 0 )
+                    {
+                        foreach ( $excludedGroupsID as $groupID )
+                        {
+                            // $IDArray will contain IDs of "Excluded user groups"
+                            $IDArray = split( ',', $groupID[ 'data_text2' ] );
+                            // $newIDArray will contain  array without $contentObjectID
+                            $newIDArray = array_filter( $IDArray, create_function( '$v', 'return ( $v != ' . $contentObjectID .' );' ) );
+                            $newValues = implode( ',', $newIDArray );
+                            $db->query( 'UPDATE ezworkflow_event
                                           SET    data_text2 = \''. $newValues .'\'
                                           WHERE  id = ' . $groupID[ 'id' ] );
-                         }
-                     }
-              } break;
-          }
+                        }
+                    }
+                } break;
+            }
         }
     }
 

@@ -26,6 +26,7 @@ CREATE TABLE ezx_approve_status (
   ended int(11) NOT NULL default '0',
   workflowprocess_id int(11) NOT NULL default '0',
   event_position int(11) NOT NULL default '0',
+  required_num_approvers int(11) NOT NULL default '0',
   PRIMARY KEY( id, step ) );
 
 CREATE TABLE ezx_approve_status_user_link (

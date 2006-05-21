@@ -296,7 +296,15 @@ class eZApprove2CollaborationHandler extends eZCollaborationItemHandler
             }
             else if ( $this->isCustomAction( 'Deny' ) )
             {
+                $collaborationItem->setIsActive( false );
+                $collaborationItem->setAttribute( 'status', EZ_COLLABORATION_STATUS_INACTIVE );
                 $approveStatusUserLink->setAttribute( 'approve_status', eZXApproveStatusUserLink_StatusDiscarded );
+
+                // Revert object version status to draft
+                $contentObjectVersion = eZContentObjectVersion::fetchVersion( $approveStatus->attribute( 'active_version' ),
+                                                                              $approveStatus->attribute( 'contentobject_id' ) );
+                $contentObjectVersion->setAttribute( 'status', EZ_VERSION_STATUS_DRAFT );
+                $contentObjectVersion->sync();
             }
             $approveStatusUserLink->sync();
 
@@ -367,6 +375,8 @@ class eZApprove2CollaborationHandler extends eZCollaborationItemHandler
                 eZCollaborationItemMessageLink::addMessage( $collaborationItem, $message, EZ_COLLABORATION_MESSAGE_TYPE_APPROVE2 );
             }
         }
+
+        $collaborationItem->setAttribute( 'modified', mktime() );
         $collaborationItem->sync();
         return $module->redirectToView( $redirectView, $redirectParameters );
     }

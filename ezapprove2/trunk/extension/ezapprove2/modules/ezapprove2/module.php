@@ -34,18 +34,18 @@ $Module = array( 'name' => 'eZApprove2' );
 $ViewList['select_approver'] = array(
     'script' => 'select_approver.php',
     'ui_context' => 'edit',
-    'default_navigation_part' => 'ezxnewsletter',
+    'default_navigation_part' => 'ezapprove2',
     'params' => array( "ApproveStatusID", 'Step' ) );
 
 $ViewList['add_approver'] = array(
     'script' => 'add_approver.php',
     'ui_context' => 'edit',
-    'default_navigation_part' => 'ezxnewsletter',
+    'default_navigation_part' => 'ezapprove2',
     'params' => array( "ApproveStatusID" ) );
 
 $ViewList['view_approve_list'] = array(
     'script' => 'view_approve_list.php',
-    'default_navigation_part' => 'ezxnewsletter',
+    'default_navigation_part' => 'ezapprove2',
     'params' => array( ) );
 
 ?>
