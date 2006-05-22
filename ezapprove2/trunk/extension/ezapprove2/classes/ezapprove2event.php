@@ -44,6 +44,8 @@ define( 'eZApprove2Event_RequireApproveUser', 2 );
 define( 'eZApprove2Event_ApproveTypePredefined', 0 );
 define( 'eZApprove2Event_ApproveTypeUser', 1 );
 
+define( 'eZApprove2Event_RequiredNumApproversAny', -1 );
+
 define( 'eZApprove2Event_AddApproverNo', 0 );
 define( 'eZApprove2Event_AddApproverYes', 1 );
 

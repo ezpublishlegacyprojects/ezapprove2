@@ -10,7 +10,7 @@
 
 <div class="context-block">
 {* DESIGN: Header START *}<div class="box-header"><div class="box-tc"><div class="box-ml"><div class="box-mr"><div class="box-tl"><div class="box-tr">
-<h2 class="context-title">{'Select users to do content approval <%object_name>'|i18n( 'ezapprove2',, hash( '%object_name', $object.name ) )|wash}</h2>
+<h2 class="context-title">{'Select users for content approval <%object_name>'|i18n( 'ezapprove2',, hash( '%object_name', $object.name ) )|wash}</h2>
 
 {* DESIGN: Mainline *}<div class="header-mainline"></div>
 
@@ -25,14 +25,14 @@
         <h2>{$warning|wash}</h2>
     </div>
 {/if}
-{$approval_status.approve2_event.require_all_approve}
+
 {if $approval_status.approve2_event.require_all_approve|eq(2)}
     <div class="block">
         <div class="element">
             {'Select minimum number of required approvals.'|i18n( 'crm' )}
             <select name="RequiredNumberApproves_{$event.id}">
-            <option value="-1" {cond( $approval_status.required_num_approvers|eq(-1), 'selected="selected"', '')}>{'Any'|i18n( 'design/admin/workflow/eventtype/edit' )}</option> // TODO
-            {for 1 to count( $approval_status.approve_user_list )|sub(1) as $num}
+            <option value="-1" {cond( $approval_status.required_num_approvers|eq(-1), 'selected="selected"', '')}>{'Any'|i18n( 'design/admin/workflow/eventtype/edit' )}</option>
+            {for 1 to max( 2, count( $approval_status.approve_user_list ) )|sub(1) as $num}
             <option value="{$num}" {cond( $approval_status.required_num_approvers|eq($num), 'selected="selected"', '')}>{$num}</option>
             {/for}
         </select>
@@ -40,7 +40,6 @@
         </div>
     </div>
 
-    {* Nothing special needed *}
 {/if}
 
 <div class="block">

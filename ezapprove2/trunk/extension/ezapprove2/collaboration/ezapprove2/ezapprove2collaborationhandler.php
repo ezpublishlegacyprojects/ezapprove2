@@ -345,6 +345,10 @@ class eZApprove2CollaborationHandler extends eZCollaborationItemHandler
             $oldVersion->setAttribute( 'status', EZ_VERSION_STATUS_REJECTED );
             $oldVersion->sync();
 
+            // Abort collaboration item. Added by KK
+            $collaborationItem->setIsActive( false );
+            $collaborationItem->setAttribute( 'status', EZ_COLLABORATION_STATUS_INACTIVE );
+
             $db->commit();
 
             // 4. Redirect user to new object.
