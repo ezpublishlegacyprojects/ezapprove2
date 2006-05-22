@@ -181,10 +181,22 @@ class eZXApprove2Type extends eZWorkflowEventType
         else
             $correctSection = true;
 
-        $inExcludeGroups = count( array_intersect( $userGroups, $workflowGroups ) ) != 0;
+        switch( $eventData->attribute( 'approve_type' ) )
+        {
+            case eZApprove2Event_ApproveTypeUser:
+            {
+                $inExcludeGroups = false;
+                $userIsEditor = false;
+            } break;
 
-        $userIsEditor = ( in_array( $user->id(), $editors ) ||
-                          count( array_intersect( $userGroups, $approveGroups ) ) != 0 );
+            default:
+            case eZApprove2Event_ApproveTypePredefined:
+            {
+                $inExcludeGroups = count( array_intersect( $userGroups, $workflowGroups ) ) != 0;
+                $userIsEditor = ( in_array( $user->id(), $editors ) ||
+                                  count( array_intersect( $userGroups, $approveGroups ) ) != 0 );
+            } break;
+        }
 
         if ( !$inExcludeGroups &&
              !$userIsEditor &&

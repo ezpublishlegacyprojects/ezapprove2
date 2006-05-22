@@ -32,7 +32,7 @@
             {'Select minimum number of required approvals.'|i18n( 'crm' )}
             <select name="RequiredNumberApproves_{$event.id}">
             <option value="-1" {cond( $approval_status.required_num_approvers|eq(-1), 'selected="selected"', '')}>{'Any'|i18n( 'design/admin/workflow/eventtype/edit' )}</option>
-            {for 1 to max( 2, count( $approval_status.approve_user_list ) )|sub(1) as $num}
+            {for 1 to max( 1, count( $approval_status.approve_user_list ) ) as $num}
             <option value="{$num}" {cond( $approval_status.required_num_approvers|eq($num), 'selected="selected"', '')}>{$num}</option>
             {/for}
         </select>
