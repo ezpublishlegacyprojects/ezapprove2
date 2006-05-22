@@ -186,7 +186,8 @@ class eZXApprove2Type extends eZWorkflowEventType
         $userIsEditor = ( in_array( $user->id(), $editors ) ||
                           count( array_intersect( $userGroups, $approveGroups ) ) != 0 );
 
-        if ( !$inExcludeGroups and
+        if ( !$inExcludeGroups &&
+             !$userIsEditor &&
              $correctSection )
         {
             switch( $eventData->attribute( 'approve_type' ) )
