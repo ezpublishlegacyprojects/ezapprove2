@@ -582,11 +582,11 @@ class eZXApproveStatus extends eZPersistentObject
     */
     function statusNameMap()
     {
-        return array( eZXApproveStatus_StatusSelectApprover => ezi18n( 'ezxapprove2', 'Select approver' ),
-                      eZXApproveStatus_StatusInApproval => ezi18n( 'ezxapprove2', 'In approval' ),
-                      eZXApproveStatus_StatusApproved => ezi18n( 'ezxapprove2', 'Approved' ),
-                      eZXApproveStatus_StatusDiscarded => ezi18n( 'ezxapprove2', 'Discarded' ),
-                      eZXApproveStatus_StatusFinnished => ezi18n( 'ezxapprove2', 'Finnished' ) );
+        return array( eZXApproveStatus_StatusSelectApprover => ezi18n( 'ezapprove2', 'Select approver' ),
+                      eZXApproveStatus_StatusInApproval => ezi18n( 'ezapprove2', 'In approval' ),
+                      eZXApproveStatus_StatusApproved => ezi18n( 'ezapprove2', 'Approved' ),
+                      eZXApproveStatus_StatusDiscarded => ezi18n( 'ezapprove2', 'Discarded' ),
+                      eZXApproveStatus_StatusFinnished => ezi18n( 'ezapprove2', 'Finnished' ) );
     }
 
 }

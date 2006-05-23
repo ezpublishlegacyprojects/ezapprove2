@@ -85,7 +85,7 @@ $tpl->setVariable( 'limit', $limit );
 $Result = array();
 $Result['content'] =& $tpl->fetch( "design:workflow/eventtype/ezapprove2/view_approve_list.tpl" );
 $Result['path'] = array( array( 'url' => false,
-                                'text' => ezi18n( 'ezxnewsletter', 'Approve List' ) ) );
+                                'text' => ezi18n( 'ezapprove2', 'Approve List' ) ) );
 
 
 ?>

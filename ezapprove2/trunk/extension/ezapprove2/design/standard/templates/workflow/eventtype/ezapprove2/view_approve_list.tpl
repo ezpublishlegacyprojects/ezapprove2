@@ -6,7 +6,7 @@
 
 <div class="context-block">
 {* DESIGN: Header START *}<div class="box-header"><div class="box-tc"><div class="box-ml"><div class="box-mr"><div class="box-tl"><div class="box-tr">
-<h1 class="context-title">{'Elements awaiting approval'|i18n( 'ezxnewsletter' )}</h1>
+<h1 class="context-title">{'Elements awaiting approval'|i18n( 'ezapprove2' )}</h1>
 
 {* DESIGN: Mainline *}<div class="header-mainline"></div>
 
@@ -48,19 +48,19 @@
 {* Subscription list table. *}
 <table class="list" cellspacing="0">
 <tr>
-    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} alt="{'Invert selection.'|i18n( 'ezxnewsletter' )}" title="{'Invert selection.'|i18n( 'ezxnewsletter' )}" onclick="ezjs_toggleCheckboxes( document.approve_list, 'ApproveStatusIDArray[]' ); return false;" /></th>
-    <th class="tight">{'Object ID'|i18n('ezxnewslettert')}</th>
-    <th>{'Name'|i18n('ezxnewsletter')}</th>
-    <th>{'Creator'|i18n('ezxnewsletter')}</th>
-    <th>{'Started'|i18n('ezxnewsletter')}</th>
-    <th>{'# Approved'|i18n('ezxnewsletter')}</th>
-    <th>{'# Required'|i18n('ezxnewsletter')}</th>
-{*    <th class="tight">{'Action'|i18n('ezxnewslettert')}</th>*}
+    <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} alt="{'Invert selection.'|i18n( 'ezapprove2' )}" title="{'Invert selection.'|i18n( 'ezapprove2' )}" onclick="ezjs_toggleCheckboxes( document.approve_list, 'ApproveStatusIDArray[]' ); return false;" /></th>
+    <th class="tight">{'Object ID'|i18n('ezapprove2')}</th>
+    <th>{'Name'|i18n('ezapprove2')}</th>
+    <th>{'Creator'|i18n('ezapprove2')}</th>
+    <th>{'Started'|i18n('ezapprove2')}</th>
+    <th>{'# Approved'|i18n('ezapprove2')}</th>
+    <th>{'# Required'|i18n('ezapprove2')}</th>
+{*    <th class="tight">{'Action'|i18n('ezapprove2')}</th>*}
 </tr>
 {foreach $approve_status_list as $approveStatus
          sequence array( bglight, bgdark ) as $seq}
 <tr class="{$seq}">
-    <td><input type="checkbox" name="ApproveStatusIDArray[]" value="{$approveStatus.id}" title="{'Select approval for removal. This will will mark the pending version as archived.'|i18n( 'ezxnewsletter' )}" /></td>
+    <td><input type="checkbox" name="ApproveStatusIDArray[]" value="{$approveStatus.id}" title="{'Select approval for removal. This will will mark the pending version as archived.'|i18n( 'ezapprove2' )}" /></td>
     <td class="number"><a href={concat( '/collaboration/item/full/', $approveStatus.collaborationitem_id )|ezurl}>{$approveStatus.contentobject_id}</a></td>
     <td><a href={concat( '/collaboration/item/full/', $approveStatus.collaborationitem_id )|ezurl}>{$approveStatus.object_version.name|wash}</a></td>
     <td><a href={$approveStatus.object_version.creator.main_node.url_alias|ezurl}>{$approveStatus.object_version.creator.name|wash}</a></td>
@@ -105,7 +105,7 @@
 <div class="controlbar">
 {* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml"><div class="box-mr"><div class="box-tc"><div class="box-bl"><div class="box-br">
 <div class="block">
-<div align="right"><input class="button" type="submit" name="UpdateApproveStatusList" value="{'Update list'|i18n( 'ezapprove2' )}" title="{'Update approval statuses.'|i18n( 'ezxnewsletter' )}" /></div>
+<div align="right"><input class="button" type="submit" name="UpdateApproveStatusList" value="{'Update list'|i18n( 'ezapprove2' )}" title="{'Update approval statuses.'|i18n( 'ezapprove2' )}" /></div>
 </div>
 {* DESIGN: Control bar END *}</div></div></div></div></div></div>
 

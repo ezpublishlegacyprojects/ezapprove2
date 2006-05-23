@@ -29,7 +29,7 @@
 {if $approval_status.approve2_event.require_all_approve|eq(2)}
     <div class="block">
         <div class="element">
-            {'Select minimum number of required approvals.'|i18n( 'crm' )}
+            {'Select minimum number of required approvals.'|i18n( 'ezapprove2' )}
             <select name="RequiredNumberApproves_{$event.id}">
             <option value="-1" {cond( $approval_status.required_num_approvers|eq(-1), 'selected="selected"', '')}>{'Any'|i18n( 'design/admin/workflow/eventtype/edit' )}</option>
             {for 1 to max( 1, count( $approval_status.approve_user_list ) ) as $num}
