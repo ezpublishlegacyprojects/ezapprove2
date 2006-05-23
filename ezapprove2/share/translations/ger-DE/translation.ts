@@ -3,7 +3,7 @@
     <name>crm</name>
     <message>
         <source>Select minimum number of required approvals.</source>
-        <translation>Wählen Sie die Minimalzahl der notwendigen Freigeber.</translation>
+        <translation type="obsolete">Wählen Sie die Minimalzahl der notwendigen Freigeber.</translation>
     </message>
 </context>
 <context>
@@ -368,9 +368,6 @@ können Sie Ihre Einstellungen hier ändern:</translation>
         <source>Select users for content approval &lt;%object_name&gt;</source>
         <translation>Benutzer auswählen, die den Content von &lt;%object_name&gt; freigeben sollen</translation>
     </message>
-</context>
-<context>
-    <name>ezxapprove2</name>
     <message>
         <source>Select approver</source>
         <translation>Freigeber auswählen</translation>
@@ -391,9 +388,10 @@ können Sie Ihre Einstellungen hier ändern:</translation>
         <source>Finnished</source>
         <translation>Beendet</translation>
     </message>
-</context>
-<context>
-    <name>ezxnewsletter</name>
+    <message>
+        <source>Select minimum number of required approvals.</source>
+        <translation>Wählen Sie die Minimalzahl der notwendigen Freigeber.</translation>
+    </message>
     <message>
         <source>Elements awaiting approval</source>
         <translation>Inhalte, die auf Freigabe warten</translation>
@@ -401,6 +399,10 @@ können Sie Ihre Einstellungen hier ändern:</translation>
     <message>
         <source>Invert selection.</source>
         <translation>Auswahl umkehren.</translation>
+    </message>
+    <message>
+        <source>Object ID</source>
+        <translation>Objekt ID</translation>
     </message>
     <message>
         <source>Name</source>
@@ -423,6 +425,10 @@ können Sie Ihre Einstellungen hier ändern:</translation>
         <translation># Erforderlich</translation>
     </message>
     <message>
+        <source>Action</source>
+        <translation>Aktion</translation>
+    </message>
+    <message>
         <source>Select approval for removal. This will will mark the pending version as archived.</source>
         <translation>Wählen Sie Freigaben zum Entfernen aus. Das wird den Content als &quot;archiviert&quot; markieren.</translation>
     </message>
@@ -436,14 +442,80 @@ können Sie Ihre Einstellungen hier ändern:</translation>
     </message>
 </context>
 <context>
+    <name>ezxapprove2</name>
+    <message>
+        <source>Select approver</source>
+        <translation type="obsolete">Freigeber auswählen</translation>
+    </message>
+    <message>
+        <source>In approval</source>
+        <translation type="obsolete">Wartet auf Freigabe</translation>
+    </message>
+    <message>
+        <source>Approved</source>
+        <translation type="obsolete">Freigegeben</translation>
+    </message>
+    <message>
+        <source>Discarded</source>
+        <translation type="obsolete">Abgebrochen</translation>
+    </message>
+    <message>
+        <source>Finnished</source>
+        <translation type="obsolete">Beendet</translation>
+    </message>
+</context>
+<context>
+    <name>ezxnewsletter</name>
+    <message>
+        <source>Elements awaiting approval</source>
+        <translation type="obsolete">Inhalte, die auf Freigabe warten</translation>
+    </message>
+    <message>
+        <source>Invert selection.</source>
+        <translation type="obsolete">Auswahl umkehren.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="obsolete">Name</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation type="obsolete">Ersteller</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation type="obsolete">Begonnen</translation>
+    </message>
+    <message>
+        <source># Approved</source>
+        <translation type="obsolete"># Freigegeben</translation>
+    </message>
+    <message>
+        <source># Required</source>
+        <translation type="obsolete"># Erforderlich</translation>
+    </message>
+    <message>
+        <source>Select approval for removal. This will will mark the pending version as archived.</source>
+        <translation type="obsolete">Wählen Sie Freigaben zum Entfernen aus. Das wird den Content als &quot;archiviert&quot; markieren.</translation>
+    </message>
+    <message>
+        <source>Update approval statuses.</source>
+        <translation type="obsolete">Freigabe Status aktualisieren.</translation>
+    </message>
+    <message>
+        <source>Approve List</source>
+        <translation type="obsolete">Freigabe Liste</translation>
+    </message>
+</context>
+<context>
     <name>ezxnewslettert</name>
     <message>
         <source>Object ID</source>
-        <translation>Objekt ID</translation>
+        <translation type="obsolete">Objekt ID</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation>Aktion</translation>
+        <translation type="obsolete">Aktion</translation>
     </message>
 </context>
 <context>
