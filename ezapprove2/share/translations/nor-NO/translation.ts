@@ -140,53 +140,13 @@
     </message>
     <message>
         <source>Creator</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Forfatter</translation>
     </message>
 </context>
 <context>
     <name>design/admin/workflow/eventtype/edit</name>
     <message>
-        <source>Affected sections</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All sections</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Users select approvers themselves</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Users select who should approve the content when publishing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Required number of users to approve content</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Any</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select if one or all is enough to approve content.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Allow approvers to be added while approving content.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pre selected approvers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Users who approves content</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>User</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -199,30 +159,6 @@
     </message>
     <message>
         <source>Add users</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Groups who approves content</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No groups selected.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add groups</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Excluded user groups ( users in these groups do not need to have their content approved )</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>User and user groups</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -435,6 +371,86 @@ change your settings at:</source>
     <message>
         <source>Action</source>
         <translation>Handling</translation>
+    </message>
+    <message>
+        <source>Affected sections</source>
+        <translation>Berørte seksjoner</translation>
+    </message>
+    <message>
+        <source>All sections</source>
+        <translation>Alle seksjoner</translation>
+    </message>
+    <message>
+        <source>Users select approvers themselves</source>
+        <translation>Brukere velger godkjennere selv</translation>
+    </message>
+    <message>
+        <source>Users select who should approve the content when publishing</source>
+        <translation>Brukere hvem som skal godkjenne like etter publisering</translation>
+    </message>
+    <message>
+        <source>Required number of users to approve content</source>
+        <translation>Påkrevd antall brukere som må godkjenne innhold</translation>
+    </message>
+    <message>
+        <source>Any</source>
+        <translation>Ubestemt</translation>
+    </message>
+    <message>
+        <source>Select if one or all is enough to approve content.</source>
+        <translation>Velg om en eller alle må godkjenne innhold.</translation>
+    </message>
+    <message>
+        <source>Allow approvers to be added while approving content.</source>
+        <translation>Tillat flere godkjennere å bli lagt til under godkjenning.</translation>
+    </message>
+    <message>
+        <source>Pre selected approvers</source>
+        <translation>Forhåndsdefinerte godkjennere</translation>
+    </message>
+    <message>
+        <source>Users who approves content</source>
+        <translation>Brukere som godkjenner innhold</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Bruker</translation>
+    </message>
+    <message>
+        <source>No users selected.</source>
+        <translation>Ingen brukere valgt.</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Fjern valgte</translation>
+    </message>
+    <message>
+        <source>Add users</source>
+        <translation>Legg til brukere</translation>
+    </message>
+    <message>
+        <source>Groups who approves content</source>
+        <translation>Brukergrupper som godkjenner innhold</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Brukergruppe</translation>
+    </message>
+    <message>
+        <source>No groups selected.</source>
+        <translation>Ingen brukergrupper valgt.</translation>
+    </message>
+    <message>
+        <source>Add groups</source>
+        <translation>Legg til brukergrupper</translation>
+    </message>
+    <message>
+        <source>Excluded user groups ( users in these groups do not need to have their content approved )</source>
+        <translation>Eksluderte brukergrupper ( brukere i disse brukergruppene trenger ikke å få innholdet godkjent )</translation>
+    </message>
+    <message>
+        <source>User and user groups</source>
+        <translation>Brukere og brukergrupper</translation>
     </message>
 </context>
 <context>

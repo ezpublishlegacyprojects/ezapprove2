@@ -147,23 +147,23 @@
     <name>design/admin/workflow/eventtype/edit</name>
     <message>
         <source>Affected sections</source>
-        <translation>Betroffene Sektionen</translation>
+        <translation type="obsolete">Betroffene Sektionen</translation>
     </message>
     <message>
         <source>All sections</source>
-        <translation>Alle Sektionen</translation>
+        <translation type="obsolete">Alle Sektionen</translation>
     </message>
     <message>
         <source>Users select approvers themselves</source>
-        <translation>Benutzer können selbst Freigeber aussuchen</translation>
+        <translation type="obsolete">Benutzer können selbst Freigeber aussuchen</translation>
     </message>
     <message>
         <source>Users select who should approve the content when publishing</source>
-        <translation>Benutzer, die den Content freigeben sollen</translation>
+        <translation type="obsolete">Benutzer, die den Content freigeben sollen</translation>
     </message>
     <message>
         <source>Required number of users to approve content</source>
-        <translation>Anzahl der Freigeber, die notwendig sind, damit der Content veröffentlicht werden darf</translation>
+        <translation type="obsolete">Anzahl der Freigeber, die notwendig sind, damit der Content veröffentlicht werden darf</translation>
     </message>
     <message>
         <source>Any</source>
@@ -171,23 +171,23 @@
     </message>
     <message>
         <source>Select if one or all is enough to approve content.</source>
-        <translation>Auswählen, wenn einer oder alle den Content freigeben müssen.</translation>
+        <translation type="obsolete">Auswählen, wenn einer oder alle den Content freigeben müssen.</translation>
     </message>
     <message>
         <source>Allow approvers to be added while approving content.</source>
-        <translation>Erlauben, dass Freigeber während des Workflows hinzugefügt werden.</translation>
+        <translation type="obsolete">Erlauben, dass Freigeber während des Workflows hinzugefügt werden.</translation>
     </message>
     <message>
         <source>Pre selected approvers</source>
-        <translation>Vorausgewählte Personen</translation>
+        <translation type="obsolete">Vorausgewählte Personen</translation>
     </message>
     <message>
         <source>Users who approves content</source>
-        <translation>Benutzer, die den Content freigben</translation>
+        <translation type="obsolete">Benutzer, die den Content freigben</translation>
     </message>
     <message>
         <source>User</source>
-        <translation>Benutzer</translation>
+        <translation type="obsolete">Benutzer</translation>
     </message>
     <message>
         <source>No users selected.</source>
@@ -203,27 +203,27 @@
     </message>
     <message>
         <source>Groups who approves content</source>
-        <translation>Gruppen, die den Content freigeben</translation>
+        <translation type="obsolete">Gruppen, die den Content freigeben</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Gruppe</translation>
+        <translation type="obsolete">Gruppe</translation>
     </message>
     <message>
         <source>No groups selected.</source>
-        <translation>Keine Gruppen ausgewählt.</translation>
+        <translation type="obsolete">Keine Gruppen ausgewählt.</translation>
     </message>
     <message>
         <source>Add groups</source>
-        <translation>Gruppen hinzufügen</translation>
+        <translation type="obsolete">Gruppen hinzufügen</translation>
     </message>
     <message>
         <source>Excluded user groups ( users in these groups do not need to have their content approved )</source>
-        <translation>Benutzergruppen ausschließen (Benutzer in diesen Gruppen brauchen den Workflow nicht zu durchlaufen)</translation>
+        <translation type="obsolete">Benutzergruppen ausschließen (Benutzer in diesen Gruppen brauchen den Workflow nicht zu durchlaufen)</translation>
     </message>
     <message>
         <source>User and user groups</source>
-        <translation>Benutzer und Benutzergruppen</translation>
+        <translation type="obsolete">Benutzer und Benutzergruppen</translation>
     </message>
     <message>
         <source>Approve users</source>
@@ -439,6 +439,86 @@ können Sie Ihre Einstellungen hier ändern:</translation>
     <message>
         <source>Approve List</source>
         <translation>Freigabe Liste</translation>
+    </message>
+    <message>
+        <source>Affected sections</source>
+        <translation>Betroffene Sektionen</translation>
+    </message>
+    <message>
+        <source>All sections</source>
+        <translation>Alle Sektionen</translation>
+    </message>
+    <message>
+        <source>Users select approvers themselves</source>
+        <translation>Benutzer können selbst Freigeber aussuchen</translation>
+    </message>
+    <message>
+        <source>Users select who should approve the content when publishing</source>
+        <translation>Benutzer, die den Content freigeben sollen</translation>
+    </message>
+    <message>
+        <source>Required number of users to approve content</source>
+        <translation>Anzahl der Freigeber, die notwendig sind, damit der Content veröffentlicht werden darf</translation>
+    </message>
+    <message>
+        <source>Any</source>
+        <translation>Jede</translation>
+    </message>
+    <message>
+        <source>Select if one or all is enough to approve content.</source>
+        <translation>Auswählen, wenn einer oder alle den Content freigeben müssen.</translation>
+    </message>
+    <message>
+        <source>Allow approvers to be added while approving content.</source>
+        <translation>Erlauben, dass Freigeber während des Workflows hinzugefügt werden.</translation>
+    </message>
+    <message>
+        <source>Pre selected approvers</source>
+        <translation>Vorausgewählte Personen</translation>
+    </message>
+    <message>
+        <source>Users who approves content</source>
+        <translation>Benutzer, die den Content freigben</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>No users selected.</source>
+        <translation>Keine Benutzer ausgewählt.</translation>
+    </message>
+    <message>
+        <source>Remove selected</source>
+        <translation>Ausgewählte löschen</translation>
+    </message>
+    <message>
+        <source>Add users</source>
+        <translation>Benutzer hinzufügen</translation>
+    </message>
+    <message>
+        <source>Groups who approves content</source>
+        <translation>Gruppen, die den Content freigeben</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Gruppe</translation>
+    </message>
+    <message>
+        <source>No groups selected.</source>
+        <translation>Keine Gruppen ausgewählt.</translation>
+    </message>
+    <message>
+        <source>Add groups</source>
+        <translation>Gruppen hinzufügen</translation>
+    </message>
+    <message>
+        <source>Excluded user groups ( users in these groups do not need to have their content approved )</source>
+        <translation>Benutzergruppen ausschließen (Benutzer in diesen Gruppen brauchen den Workflow nicht zu durchlaufen)</translation>
+    </message>
+    <message>
+        <source>User and user groups</source>
+        <translation>Benutzer und Benutzergruppen</translation>
     </message>
 </context>
 <context>
