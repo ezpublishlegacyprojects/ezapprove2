@@ -95,6 +95,19 @@ else if ( $http->hasPostVariable( 'SubmitButton' ) )
         }
         $workflowProcess->setAttribute( 'status', EZ_WORKFLOW_STATUS_DEFERRED_TO_CRON );
         $workflowProcess->setAttribute( 'modified', mktime() );
+
+        $parameterList = $workflowProcess->attribute( 'parameter_list' );
+        if ( isset( $parameterList[ 'parent_process_id' ] ) )
+        {
+            $parentProcess = eZWorkflowProcess::fetch( $parameterList[ 'parent_process_id' ] );
+            if ( is_object( $parentProcess ) )
+            {
+                $parentProcess->setAttribute( 'status', EZ_WORKFLOW_STATUS_DEFERRED_TO_CRON );
+                $parentProcess->setAttribute( 'modified', mktime() );
+                $parentProcess->store();
+            }
+        }
+
         $workflowProcess->store();
 
         $approveINI = eZINI::instance( 'ezapprove2.ini' );
