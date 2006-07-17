@@ -84,6 +84,12 @@ else if ( $http->hasPostVariable( 'SubmitButton' ) )
     }
     else
     {
+        // Set object version to draft untill approvers are selected successfully in case user exists in the wrong way.
+        include_once( 'kernel/classes/ezcontentobjectversion.php' );
+        $contentObjectVersion = $approveStatus->attribute( 'object_version' );
+        $contentObjectVersion->setAttribute( 'status', EZ_VERSION_STATUS_PENDING );
+        $contentObjectVersion->sync();
+
         $approveStatus->setAttribute( 'approve_status', eZXApproveStatus_StatusInApproval );
         $approveStatus->store();
 

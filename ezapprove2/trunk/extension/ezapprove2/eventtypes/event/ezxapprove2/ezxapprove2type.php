@@ -233,6 +233,12 @@ class eZXApprove2Type extends eZWorkflowEventType
                                                                     'approval_status' => $approveStatus,
                                                                     'object' => $object );
 
+                        // Set object version to draft untill approvers are selected successfully in case user exists in the wrong way.
+                        include_once( 'kernel/classes/ezcontentobjectversion.php' );
+                        $contentObjectVersion = eZContentObjectVersion::fetchVersion( $contentObjectVersionID, $contentObjectID );
+                        $contentObjectVersion->setAttribute( 'status', EZ_VERSION_STATUS_DRAFT );
+                        $contentObjectVersion->sync();
+
                         return EZ_WORKFLOW_TYPE_STATUS_FETCH_TEMPLATE_REPEAT;
                     }
                     else
