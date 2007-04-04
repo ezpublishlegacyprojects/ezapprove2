@@ -147,19 +147,19 @@
     <name>design/admin/workflow/eventtype/edit</name>
     <message>
         <source>Any</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ubestemt</translation>
     </message>
     <message>
         <source>No users selected.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ingen brukere valgt.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern valgte</translation>
     </message>
     <message>
         <source>Add users</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Legg til brukere</translation>
     </message>
     <message>
         <source>Approve users</source>
@@ -231,7 +231,7 @@ change your settings at:</source>
     </message>
     <message>
         <source>Any</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ubestemt</translation>
     </message>
     <message>
         <source>Users without approval</source>
