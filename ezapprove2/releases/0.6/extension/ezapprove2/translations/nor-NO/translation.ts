@@ -14,67 +14,67 @@
     </message>
     <message>
         <source>The content object awaits approval before it can be published.</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektet avventer godkjennelse før det kan publiseres.</translation>
     </message>
     <message>
         <source>If you wish you may send a message to the person approving it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvis du vil, kan du sende en melding til personen som skal godkjenne det.</translation>
     </message>
     <message>
         <source>The content object %1 needs your approval before it can be published.</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektet %1 avventer din godkjennelse før det kan publiseres.</translation>
     </message>
     <message>
         <source>Do you approve of the content object being published?</source>
-        <translation type="unfinished"></translation>
+        <translation>Godtar du at objektet publiseres?</translation>
     </message>
     <message>
         <source>You have approved the content, and it is waiting for more approvers, or the workflow to continue the processing of the object,</source>
-        <translation type="unfinished"></translation>
+        <translation>Du har godkjent innholdet. Det venter på godkjenning fra andre, eller på at arbeidsflytprosessen skal fortsette å behandle objektet.</translation>
     </message>
     <message>
         <source>The content object %1 was approved and will be published once the publishing workflow continues.</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektet %1 ble godkjent, og blir publisert når arbeidsflytprosessen fortsetter.</translation>
     </message>
     <message>
         <source>The content object %1 [deleted] was approved and will be published once the publishing workflow continues.</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektet %1 [slettet] ble godkjent, og blir publisert når arbeidsflytprosessen fortsetter.</translation>
     </message>
     <message>
         <source>The content object %1 was not accepted but is available as a draft again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektet %1 ble ikke godkjent, men er tilgjengelig som utkast igjen.</translation>
     </message>
     <message>
         <source>The content object %1 [deleted] was not accepted but is available as a draft again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektet %1 [slettet] ble ikke godkjent, men er tilgjengelig som utkast igjen.</translation>
     </message>
     <message>
         <source>You may reedit the draft and publish it, in which case an approval is required again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan redigere utkastet og publisere det igjen. I så fall må det godkjennes igjen.</translation>
     </message>
     <message>
         <source>Edit the object</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger objektet</translation>
     </message>
     <message>
         <source>The content object %1 was not accepted but will be available as a draft for the author.</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektet %1 ble ikke godkjent, men er tilgjengelig som et utkast for forfatteren.</translation>
     </message>
     <message>
         <source>The content object %1 [deleted] was not accepted but will be available as a draft for the author.</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektet %1 [slettet] ble ikke godkjent, men er tilgjengelig som et utkast for forfatteren.</translation>
     </message>
     <message>
         <source>The author can reedit the draft and publish it again, in which a new approval item is made.</source>
-        <translation type="unfinished"></translation>
+        <translation>Forfatteren kan redigere utkastet og publisere det igjen. I så fall må det godkjennes igjen.</translation>
     </message>
     <message>
         <source>Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentar</translation>
     </message>
     <message>
         <source>Add Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til kommentar</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -82,125 +82,128 @@
     </message>
     <message>
         <source>Deny</source>
-        <translation type="unfinished"></translation>
+        <translation>Avslå</translation>
     </message>
     <message>
         <source>Add approver</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til godkjenningsansvarlig</translation>
     </message>
     <message>
         <source>Messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Meldinger</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Forhåndsvis</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger</translation>
     </message>
     <message>
         <source>Participants</source>
-        <translation type="unfinished"></translation>
+        <translation>Deltakere</translation>
     </message>
 </context>
 <context>
     <name>design/admin/collaboration/handler/view/line/ezapprove</name>
     <message>
         <source>%1 awaits approval by editor</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 avventer godkjenning fra redaktør</translation>
     </message>
     <message>
         <source>%1 was approved for publishing</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 er godkjent for publisering</translation>
     </message>
     <message>
         <source>%1 was not approved for publishing</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ble ikke godkjent for publisering</translation>
     </message>
     <message>
         <source>%1 awaits your approval</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 avventer din godkjenning</translation>
     </message>
 </context>
 <context>
     <name>design/admin/node/view/full</name>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger</translation>
     </message>
     <message>
         <source>Edit &lt;%child_name&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger &lt;%child_name&gt;.</translation>
     </message>
     <message>
         <source>You do not have permissions to edit &lt;%child_name&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du har ikke tilgang til å redigere &lt;%child_name&gt;.</translation>
     </message>
     <message>
         <source>Creator</source>
-        <translation type="unfinished">Forfatter</translation>
+        <translation>Forfatter</translation>
     </message>
 </context>
 <context>
     <name>design/admin/workflow/eventtype/edit</name>
     <message>
         <source>Any</source>
-        <translation type="unfinished">Ubestemt</translation>
+        <translation>Hvem som helst</translation>
     </message>
     <message>
         <source>No users selected.</source>
-        <translation type="unfinished">Ingen brukere valgt.</translation>
+        <translation>Ingen brukere valgt.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation type="unfinished">Fjern valgte</translation>
+        <translation>Fjern valgte</translation>
     </message>
     <message>
         <source>Add users</source>
-        <translation type="unfinished">Legg til brukere</translation>
+        <translation>Legg til brukere</translation>
     </message>
     <message>
         <source>Approve users</source>
-        <translation type="unfinished"></translation>
+        <translation>Godkjenn brukere</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Avbryt</translation>
     </message>
     <message>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Fortsett</translation>
     </message>
 </context>
 <context>
     <name>design/standard/collaboration</name>
     <message>
         <source>Posted: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Postet: %1</translation>
     </message>
 </context>
 <context>
     <name>design/standard/collaboration/approval</name>
     <message>
         <source>[%sitename] Approval of &quot;%objectname&quot; awaits your attention</source>
-        <translation type="unfinished"></translation>
+        <translation>[%sitename] &quot;%objectname&quot; avventer din godkjenning</translation>
     </message>
     <message>
         <source>This e-mail is to inform you that &quot;%objectname&quot; awaits your attention at %sitename.
 The publishing process has been halted and it is up to you to decide if it should continue or stop.
 The approval can viewed by using the URL below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne e-posten er sendt for å informere deg om at &quot;%objectname&quot; avventer din godkjenning på %sitename.
+Publiseringsprosessen er pauset, og det er opp til deg å avgjøre om den skal fortsette eller stoppes.
+Du kan se på saken ved å følge lenken under.</translation>
     </message>
     <message>
         <source>[%sitename] &quot;%objectname&quot; awaits approval</source>
-        <translation type="unfinished"></translation>
+        <translation>[%sitename] &quot;%objectname&quot; avventer godkjenning</translation>
     </message>
     <message>
         <source>This e-mail is to inform you that &quot;%objectname&quot; awaits approval at %sitename before it is published.
 If you wish to send comments to the approver or view the status use the URL below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne e-posten er sendt for å informere deg om at &quot;%objectname&quot; avventer godkjenning på %sitename før den publiseres.
+Hvis du vil sende en kommentar til godkjenningsansvarlig, eller se status, følg lenken under.</translation>
     </message>
 </context>
 <context>
@@ -208,34 +211,35 @@ If you wish to send comments to the approver or view the status use the URL belo
     <message>
         <source>If you do not wish to continue receiving these notifications,
 change your settings at:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvis du ikke ønsker å motta slike meldinger,
+endre innstillingene dine på:</translation>
     </message>
     <message>
         <source>%sitename notification system</source>
-        <translation type="unfinished"></translation>
+        <translation>%sitename meldingssystem</translation>
     </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/view</name>
     <message>
         <source>Approver users</source>
-        <translation type="unfinished"></translation>
+        <translation>Brukere som kan godkjenne</translation>
     </message>
     <message>
         <source>Approver groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Brukergrupper som kan godkjenne</translation>
     </message>
     <message>
         <source>Sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Seksjoner</translation>
     </message>
     <message>
         <source>Any</source>
-        <translation type="unfinished">Ubestemt</translation>
+        <translation>Hvem som helst</translation>
     </message>
     <message>
         <source>Users without approval</source>
-        <translation type="unfinished"></translation>
+        <translation>Brukere uten godkjenning</translation>
     </message>
 </context>
 <context>
