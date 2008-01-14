@@ -46,10 +46,7 @@
 
 class eZApprove2Info
 {
-    /*!
-     Constructor
-    */
-    function info()
+    static function info()
     {
         return array( 'name' => 'eZ Approve 2',
                       'version' => '0.8.0',
