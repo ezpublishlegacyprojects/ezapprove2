@@ -5,9 +5,9 @@
 // Created on: <12-Dec-2005 21:14:37 hovik>
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
-// SOFTWARE NAME: eZApprove2
-// SOFTWARE RELEASE: 0.1
-// COPYRIGHT NOTICE: Copyright (C) 1999-2006 eZ systems AS
+// SOFTWARE NAME: eZ Approve 2
+// SOFTWARE RELEASE: 0.8.0
+// COPYRIGHT NOTICE: Copyright (C) 2006-2008 eZ Systems AS
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
 //   This program is free software; you can redistribute it and/or
@@ -50,7 +50,7 @@ class eZXApproveStatus extends eZPersistentObject
     const StatusApproved       = 2;
     const StatusDiscarded      = 3;
     const StatusFinnished      = 4;
-    
+
     /*!
      Constructor
     */
@@ -139,7 +139,7 @@ class eZXApproveStatus extends eZPersistentObject
      Cancel current approve workflow
     */
     function cancel()
-    {    
+    {
 
         $collaborationItem = $this->attribute( 'collaboration_item' );
         if ( $collaborationItem )
@@ -182,7 +182,7 @@ class eZXApproveStatus extends eZPersistentObject
                 WHERE ezx_approve_status_user_link.user_id = \'' . $db->escapeString( $userID ) . '\' AND
                       ezx_approve_status.id = ezx_approve_status_user_link.approve_id AND
                       ezx_approve_status.approve_status = \'' . $db->escapeString( $status ) . '\'';
-                      
+
         $result = $db->arrayQuery( $sql, array( 'limit' => $limit,
                                                 'offset' => $offset ) );
 

@@ -3,9 +3,9 @@
 // Created on: <05-Jan-2006 13:04:38 hovik>
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
-// SOFTWARE NAME: eZApprove2
-// SOFTWARE RELEASE: 0.1
-// COPYRIGHT NOTICE: Copyright (C) 1999-2006 eZ systems AS
+// SOFTWARE NAME: eZ Approve 2
+// SOFTWARE RELEASE: 0.8.0
+// COPYRIGHT NOTICE: Copyright (C) 2006-2008 eZ Systems AS
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
 //   This program is free software; you can redistribute it and/or

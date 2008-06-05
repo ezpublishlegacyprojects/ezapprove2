@@ -5,9 +5,9 @@
 // Created on: <13-Dec-2005 11:24:05 hovik>
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
-// SOFTWARE NAME: eZApprove2
-// SOFTWARE RELEASE: 0.1
-// COPYRIGHT NOTICE: Copyright (C) 1999-2006 eZ systems AS
+// SOFTWARE NAME: eZ Approve 2
+// SOFTWARE RELEASE: 0.8.0
+// COPYRIGHT NOTICE: Copyright (C) 2006-2008 eZ Systems AS
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
 //   This program is free software; you can redistribute it and/or
@@ -87,7 +87,7 @@ class eZApprove2CollaborationHandler extends eZCollaborationItemHandler
 
     /// The contentobject was deferred and will be a draft again for reediting.
     const STATUS_DEFERRED = 3;
-    
+
     /*!
      Initializes the handler
     */
@@ -224,7 +224,7 @@ class eZApprove2CollaborationHandler extends eZCollaborationItemHandler
         $createNotification = false;
         $collaborationItem = false;
         $participantList = array();
-        
+
         if ( $collaborationID === false )
         {
             $collaborationItem = eZCollaborationItem::create( 'ezapprove2', $authorID );

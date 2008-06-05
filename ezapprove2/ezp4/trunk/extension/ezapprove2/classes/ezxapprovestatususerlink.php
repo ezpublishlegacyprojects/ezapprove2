@@ -5,9 +5,9 @@
 // Created on: <12-Dec-2005 22:19:00 hovik>
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
-// SOFTWARE NAME: eZApprove2
-// SOFTWARE RELEASE: 0.1
-// COPYRIGHT NOTICE: Copyright (C) 1999-2006 eZ systems AS
+// SOFTWARE NAME: eZ Approve 2
+// SOFTWARE RELEASE: 0.8.0
+// COPYRIGHT NOTICE: Copyright (C) 2006-2008 eZ Systems AS
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
 //   This program is free software; you can redistribute it and/or
@@ -53,15 +53,15 @@ class eZXApproveStatusUserLink extends eZPersistentObject
 {
     const RoleCreator = 0;
     const RoleApprover = 1;
-    
+
     const StatusNone = 0;
     const StatusApproved = 1;
     const StatusDiscarded = 2;
     const StatusNewDraft = 3;
- 
+
     const MessageMissing = 0;
     const MessageCreated = 1;
- 
+
     /*!
      Constructor
     */
@@ -126,7 +126,7 @@ class eZXApproveStatusUserLink extends eZPersistentObject
     {
         $cond = array( 'user_id' => $userID,
                        'approve_id' => $approveID );
-                       
+
         if ( $approveStatus !== false )
         {
             $cond['approve_role'] = $approveStatus;
@@ -150,7 +150,7 @@ class eZXApproveStatusUserLink extends eZPersistentObject
                 WHERE ezx_approve_status_user_link.approve_id = ezx_approve_status.id AND
                       ezx_approve_status.collaborationitem_id = '" . $db->escapeString( $collaborationID ) . "' AND
                       ezx_approve_status_user_link.user_id = '" . $db->escapeString( $userID ) . "'";
-                      
+
         if ( $approveStatus !== false )
         {
             $sql .= " AND ezx_approve_status_user_link.approve_role = '" . $db->escapeString( $approveStatus ) . "'";

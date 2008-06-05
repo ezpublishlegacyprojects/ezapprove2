@@ -5,9 +5,9 @@
 // Created on: <12-Dec-2005 15:15:59 hovik>
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
-// SOFTWARE NAME: eZApprove2
-// SOFTWARE RELEASE: 0.1
-// COPYRIGHT NOTICE: Copyright (C) 1999-2006 eZ systems AS
+// SOFTWARE NAME: eZ Approve 2
+// SOFTWARE RELEASE: 0.8.0
+// COPYRIGHT NOTICE: Copyright (C) 2006-2008 eZ Systems AS
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
 //   This program is free software; you can redistribute it and/or
@@ -55,7 +55,7 @@ class eZApprove2Type extends eZWorkflowEventType
     const ID = "ezapprove2";
     const COLLABORATION_NOT_CREATED = 0;
     const COLLABORATION_CREATED = 1;
-    
+
     function __construct()
     {
         $this->eZWorkflowEventType( eZApprove2Type::ID, ezi18n( 'kernel/workflow/event', "Approve2" ) );
@@ -120,11 +120,11 @@ class eZApprove2Type extends eZWorkflowEventType
     {
         eZDebugSetting::writeDebug( 'kernel-workflow-approve', $process, 'eZApprove2Type::execute' );
         eZDebugSetting::writeDebug( 'kernel-workflow-approve', $event, 'eZApprove2Type::execute' );
-        
+
         $parameters = $process->attribute( 'parameter_list' );
         $versionID = $parameters['version'];
         $object = eZContentObject::fetch( $parameters['object_id'] );
-        
+
         if ( !$object )
         {
             eZDebugSetting::writeError( 'kernel-workflow-approve', $parameters['object_id'], 'eZApprove2Type::execute' );
@@ -188,7 +188,7 @@ class eZApprove2Type extends eZWorkflowEventType
         {
             $correctSection = true;
         }
-        
+
         switch( $eventData->attribute( 'approve_type' ) )
         {
             case eZApprove2Event::ApproveTypeUser:

@@ -5,9 +5,9 @@
 // Created on: <14-Dec-2005 22:06:57 hovik>
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
-// SOFTWARE NAME: eZApprove2
-// SOFTWARE RELEASE: 0.1
-// COPYRIGHT NOTICE: Copyright (C) 1999-2006 eZ systems AS
+// SOFTWARE NAME: eZ Approve 2
+// SOFTWARE RELEASE: 0.8.0
+// COPYRIGHT NOTICE: Copyright (C) 2006-2008 eZ Systems AS
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
 //   This program is free software; you can redistribute it and/or
@@ -54,15 +54,15 @@ class eZApprove2Event extends eZPersistentObject
     const RequireApproveOne = 0;
     const RequireApproveAll = 1;
     const RequireApproveUser = 2;
-    
+
     const ApproveTypePredefined = 0;
     const ApproveTypeUser = 1;
-    
+
     const RequiredNumApproversAny = -1;
-    
+
     const AddApproverNo = 0;
     const AddApproverYes = 1;
-                    
+
     /*!
      Constructor
     */
